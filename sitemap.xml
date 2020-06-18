@@ -5,14 +5,10 @@
       <loc>https://wxianfeng.github.io/categories/</loc>
       
       
+      <changefreq>monthly</changefreq>
       
       
-    </url>
-  
-    <url>
-      <loc>https://wxianfeng.github.io/</loc>
-      
-      
+      <priority>0.5</priority>
       
       
     </url>
@@ -21,6 +17,22 @@
       <loc>https://wxianfeng.github.io/tags/</loc>
       
       
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://wxianfeng.github.io/</loc>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
       
       
     </url>
