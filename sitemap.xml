@@ -2,6 +2,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://wxianfeng.github.io/2020/first/</loc>
+      
+      <lastmod>2020-06-04T00:44:35+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://wxianfeng.github.io/posts/</loc>
+      
+      <lastmod>2020-06-04T00:44:35+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://wxianfeng.github.io/</loc>
+      
+      <lastmod>2020-06-04T00:44:35+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://wxianfeng.github.io/categories/</loc>
       
       
@@ -15,18 +57,6 @@
   
     <url>
       <loc>https://wxianfeng.github.io/tags/</loc>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://wxianfeng.github.io/</loc>
       
       
       <changefreq>monthly</changefreq>
