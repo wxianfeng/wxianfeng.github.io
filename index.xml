@@ -17,5 +17,25 @@
       <description></description>
     </item>
     
+    <item>
+      <title>About</title>
+      <link>https://wxianfeng.github.io/about/</link>
+      <pubDate>Thu, 04 Jun 2020 00:44:17 +0800</pubDate>
+      
+      <guid>https://wxianfeng.github.io/about/</guid>
+      <description>&lt;h3 id=&#34;about-site&#34;&gt;About Site&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本站始建于 2020 全球新冠疫情期间；&lt;br&gt;
+一直想使用静态 Blog，直接本地 markdown 写文章，git push 即可；终于基于 Golang 的 Hugo 搭建了这个静态 Blog；&lt;br&gt;
+原先基于 Typo(Ruby On Rails) 的 Blog不再更新，地址为 &lt;a href=&#34;http://blog.wxianfeng.com&#34;&gt;http://blog.wxianfeng.com&lt;/a&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;微信公众号&lt;br&gt;
+这个 Blog 对应的微信公众号，欢迎关注
+&lt;img src=&#34;http://mmbiz.qpic.cn/mmbiz_jpg/JQydcX2tr9GzgQWRuSTWwlkS5JATbIIkdw0lrf5RibXpwiarKXU4hUrKjibkFDrNUpqN7PcgCtJnCCoa3FMnv1htQ/0&#34; alt=&#34;程序员wxianfeng&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
