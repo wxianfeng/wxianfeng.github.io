@@ -24,10 +24,10 @@
   <title>
        
        
-           First | wxianfeng
+           使用 Hugo &#43; Github Pages 搭建静态网站 | wxianfeng
        
   </title>
-  <meta name="title" content="First | wxianfeng">
+  <meta name="title" content="使用 Hugo &#43; Github Pages 搭建静态网站 | wxianfeng">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -35,14 +35,19 @@
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="First"/>
-<meta name="twitter:description" content="First"/>
+<meta name="twitter:title" content="使用 Hugo &#43; Github Pages 搭建静态网站"/>
+<meta name="twitter:description" content="缘起 之前有个 Blog，网址为 http://blog.wxianfeng.com ，是在 2010 年基于 Typo(Ruby On Rails) 搭建的，有个后台 admin 写文章，体验非常之不好，Markdown 支持的不好，写作体验也没有本地写起来舒服，一直想换个静态 Blog，本地写，push 到 github 上，利用 2020 新冠肺炎宅在家的时间，搭建了这个 Blog，此刻正在使用 Vscode 本地写这篇文章，体感很棒，哈哈。
+静态博客选型 刚开始静态 Blog 选型的时候，调研了下，主要在 Ruby 写的 Jekyll，NodeJS 的 Hexo，和 Golang 的 Hugo 三个中作选择。
+最后选择的 Hugo，主要判断依赖为 Hugo 的 star 数最多，其次在 17 年学习过 Golang，一直没用在实际项目中，借此也可熟悉下练练手
+Hugo 主题选型 Hugo 还有一大优势就是主题特别多，经过比较筛选，个人想要首页是一个主页型页面，不是直接看到 Post，看到了 KeepIt 这个主题非常简洁美观，直接使用这个主题即可，后面如果自己有新增需求，可以给作者提 issue，或者 Fork 下来进行修改即可
+Hugo 搭建步骤 安装 Hugo brew install hugo 我使用的版本 v0.72.0
+生成站点 hugo new site /path/to/wxianfeng.github.io 安装主题 cd themes git clone https://github."/>
 
   <script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "First",
+  "headline": "使用 Hugo \u002b Github Pages 搭建静态网站",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https:\/\/wxianfeng.github.io\/2020\/first\/"
@@ -55,10 +60,10 @@
   },
   "genre": "posts",
   
-  "wordcount":  1 ,
+  "wordcount":  150 ,
   "url": "https:\/\/wxianfeng.github.io\/2020\/first\/",
-  "datePublished": "2020-06-04T00:44:35\u002b08:00",
-  "dateModified": "2020-06-04T00:44:35\u002b08:00",
+  "datePublished": "2020-03-04T00:44:35\u002b08:00",
+  "dateModified": "2020-03-04T00:44:35\u002b08:00",
   
   "publisher": {
     "@type": "Organization",
@@ -130,11 +135,11 @@
       		
 <article class="post-warp">
     <header class="post-header">
-        <h1 class="post-title">First</h1>
+        <h1 class="post-title">使用 Hugo &#43; Github Pages 搭建静态网站</h1>
         <div class="post-meta">
             Written by <a href="https://wxianfeng.github.io/" rel="author">wxianfeng</a> with ♥ 
                 <span class="post-time">
-                    on <time datetime=2020-06-04 >4 June 2020</time>
+                    on <time datetime=2020-03-04 >4 March 2020</time>
                 </span>
                 in
                 
@@ -158,7 +163,52 @@
           
           
 
-          <p>First</p>
+          <h2 id="缘起">缘起</h2>
+<p>之前有个 Blog，网址为 <a href="http://blog.wxianfeng.com">http://blog.wxianfeng.com</a> ，是在 2010 年基于 Typo(Ruby On Rails) 搭建的，有个后台 admin 写文章，体验非常之不好，Markdown 支持的不好，写作体验也没有本地写起来舒服，一直想换个静态 Blog，本地写，push 到 github 上，利用 2020 新冠肺炎宅在家的时间，搭建了这个 Blog，此刻正在使用 Vscode 本地写这篇文章，体感很棒，哈哈。</p>
+<h2 id="静态博客选型">静态博客选型</h2>
+<p>刚开始静态 Blog 选型的时候，调研了下，主要在 Ruby 写的 Jekyll，NodeJS 的 Hexo，和 Golang 的 Hugo 三个中作选择。<br>
+最后选择的 Hugo，主要判断依赖为 Hugo 的 star 数最多，其次在 17 年学习过 Golang，一直没用在实际项目中，借此也可熟悉下练练手</p>
+<h2 id="hugo-主题选型">Hugo 主题选型</h2>
+<p>Hugo 还有一大优势就是主题特别多，经过比较筛选，个人想要首页是一个主页型页面，不是直接看到 Post，看到了 <a href="https://github.com/Fastbyte01/KeepIt">KeepIt</a> 这个主题非常简洁美观，直接使用这个主题即可，后面如果自己有新增需求，可以给作者提 issue，或者 Fork 下来进行修改即可</p>
+<h2 id="hugo-搭建步骤">Hugo 搭建步骤</h2>
+<h3 id="安装-hugo">安装 Hugo</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install hugo
+</code></pre></div><p>我使用的版本 <code>v0.72.0</code></p>
+<h3 id="生成站点">生成站点</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new site /path/to/wxianfeng.github.io
+</code></pre></div><h2 id="安装主题">安装主题</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd themes
+git clone https://github.com/Fastbyte01/KeepIt.git
+</code></pre></div><p>set <code> config.toml</code> theme to KeepIt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">theme <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;KeepIt&#34;</span>
+</code></pre></div><h3 id="本地写文章">本地写文章</h3>
+<p>创建一个 About 页面</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new about.md
+</code></pre></div><p>创建第一篇文章</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new posts/first.md
+</code></pre></div><p>本地启动服务预览</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo server --theme<span style="color:#f92672">=</span>KeepIt --buildDrafts
+</code></pre></div><p>Visit <code>http://localhost:1313/</code></p>
+<p>本地服务是热加载的，文章修改后，不用重启，实时生效，非常方便</p>
+<h3 id="部署到-github-pages">部署到 Github Pages</h3>
+<ol>
+<li>生成静态文件</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo --theme<span style="color:#f92672">=</span>KeepIt --baseUrl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://wxianfeng.github.io/&#34;</span>
+</code></pre></div><p>注意，以上命令不会生成草稿页面，如果未生成任何文章，请去掉文章头部的 draft=true 再重新生成，建议不要加 draft=true</p>
+<ol start="2">
+<li>在 github 建个 repo, 把 public 作为工程根目录，push 到 github ，push 后，访问 <a href="https://wxianfeng.github.io">https://wxianfeng.github.io</a> 即可</li>
+</ol>
+<h3 id="使用自己的域名">使用自己的域名</h3>
+<ol>
+<li>Github Repo 的 Settings 中有 Github Pages 的设置，设置好你的域名</li>
+<li>在你的域名 DNS 管理处添加 CNAME 解析到 wxianfeng.github.io</li>
+</ol>
+<p>至此，你的静态 Blog 已经搭建完成，Enjoy it ~</p>
+<blockquote>
+<p>PS:<br>
+本文随着该 Blog 的功能迭代升级会持续更新</p>
+</blockquote>
 
     </div>
 
@@ -172,7 +222,7 @@
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>1</span>
+                   <span>150</span>
             </p>
             
             <p class="copyright-item">
@@ -181,7 +231,7 @@
                 <span>
 
       
-        <a href="//twitter.com/share?url=https%3a%2f%2fwxianfeng.github.io%2f2020%2ffirst%2f&amp;text=First&amp;via=" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fwxianfeng.github.io%2f2020%2ffirst%2f&amp;text=%e4%bd%bf%e7%94%a8%20Hugo%20%2b%20Github%20Pages%20%e6%90%ad%e5%bb%ba%e9%9d%99%e6%80%81%e7%bd%91%e7%ab%99&amp;via=" target="_blank" title="Share on Twitter">
           <i class="iconfont icon-twitter"></i>
         </a>
         
@@ -195,7 +245,7 @@
       
       
       
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwxianfeng.github.io%2f2020%2ffirst%2f&amp;title=First" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwxianfeng.github.io%2f2020%2ffirst%2f&amp;title=%e4%bd%bf%e7%94%a8%20Hugo%20%2b%20Github%20Pages%20%e6%90%ad%e5%bb%ba%e9%9d%99%e6%80%81%e7%bd%91%e7%ab%99" target="_blank" title="Share on LinkedIn">
           <i class="iconfont icon-linkedin"></i>
         </a>
         
