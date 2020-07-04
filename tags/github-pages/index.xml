@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github Pages on wxianfeng</title>
+    <link>https://wxianfeng.github.io/tags/github-pages/</link>
+    <description>Recent content in Github Pages on wxianfeng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 04 Mar 2020 00:44:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://wxianfeng.github.io/tags/github-pages/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 Hugo &#43; Github Pages 搭建静态网站</title>
+      <link>https://wxianfeng.github.io/2020/hugo-github-page/</link>
+      <pubDate>Wed, 04 Mar 2020 00:44:35 +0800</pubDate>
+      
+      <guid>https://wxianfeng.github.io/2020/hugo-github-page/</guid>
+      <description>缘起 之前有个 Blog，网址为 http://blog.wxianfeng.com ，是在 2010 年基于 Typo(Ruby On Rails) 搭建的，有个后台 admin 写文章，体验非常之不好，Markdown 支持的不好，写作体验也没有本地写起来舒服，一直想换个静态 Blog，本地写，push 到 github 上，利用 2020 新冠肺炎宅在家的时间，搭建了这个 Blog，此刻正在使用 Vscode 本地写这篇文章，体感很棒，哈哈。
+静态博客选型 刚开始静态 Blog 选型的时候，调研了下，主要在 Ruby 写的 Jekyll，NodeJS 的 Hexo，和 Golang 的 Hugo 三个中作选择。
+最后选择的 Hugo，主要判断依赖为 Hugo 的 star 数最多，其次在 17 年学习过 Golang，一直没用在实际项目中，借此也可熟悉下练练手
+Hugo 主题选型 Hugo 还有一大优势就是主题特别多，经过比较筛选，个人想要首页是一个主页型页面，不是直接看到 Post，看到了 KeepIt 这个主题非常简洁美观，直接使用这个主题即可，后面如果自己有新增需求，可以给作者提 issue，或者 Fork 下来进行修改即可
+Hugo 搭建步骤 安装 Hugo brew install hugo 我使用的版本 v0.72.0
+生成站点 hugo new site /path/to/wxianfeng.github.io 安装主题 cd themes git clone https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

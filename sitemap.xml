@@ -16,7 +16,91 @@
     </url>
   
     <url>
+      <loc>https://wxianfeng.github.io/categories/</loc>
+      
+      <lastmod>2020-03-04T00:44:35+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://wxianfeng.github.io/tags/github-pages/</loc>
+      
+      <lastmod>2020-03-04T00:44:35+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://wxianfeng.github.io/tags/golang/</loc>
+      
+      <lastmod>2020-03-04T00:44:35+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://wxianfeng.github.io/tags/hugo/</loc>
+      
+      <lastmod>2020-03-04T00:44:35+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://wxianfeng.github.io/tags/keepit/</loc>
+      
+      <lastmod>2020-03-04T00:44:35+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://wxianfeng.github.io/posts/</loc>
+      
+      <lastmod>2020-03-04T00:44:35+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://wxianfeng.github.io/tags/</loc>
       
       <lastmod>2020-03-04T00:44:35+08:00</lastmod>
       
@@ -44,6 +128,20 @@
     </url>
   
     <url>
+      <loc>https://wxianfeng.github.io/categories/wxianfeng.com/</loc>
+      
+      <lastmod>2020-03-04T00:44:35+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://wxianfeng.github.io/2020/hugo-github-page/</loc>
       
       <lastmod>2020-03-04T00:44:35+08:00</lastmod>
@@ -58,19 +156,9 @@
     </url>
   
     <url>
-      <loc>https://wxianfeng.github.io/categories/</loc>
+      <loc>https://wxianfeng.github.io/tags/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</loc>
       
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://wxianfeng.github.io/tags/</loc>
+      <lastmod>2020-03-04T00:44:35+08:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
