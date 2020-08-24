@@ -173,8 +173,8 @@ web.xml &lt;!-- log4j --&gt; &lt;context-param&gt; &lt;param-name&gt;log4jConfig
           <blockquote>
 <p>发现网上关于 log4j, log4j2 的配置比较乱。特别是引用的包，参差不齐，本人最近从 log4j 升级到了 log4j2，特此记录，供参考。</p>
 </blockquote>
-<h1 id="log4j-配置">log4j 配置</h1>
-<h2 id="maven">Maven</h2>
+<h2 id="log4j-配置">log4j 配置</h2>
+<h3 id="maven">Maven</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;slf4j.version&gt;</span>1.7.7<span style="color:#f92672">&lt;/slf4j.version&gt;</span>
 <span style="color:#f92672">&lt;log4j.version&gt;</span>1.2.16<span style="color:#f92672">&lt;/log4j.version&gt;</span>
 
@@ -196,13 +196,13 @@ web.xml &lt;!-- log4j --&gt; &lt;context-param&gt; &lt;param-name&gt;log4jConfig
 </code></pre></div><p><code>slf4j-log4j12</code>: slf4j 到 log4j 的绑定器<br>
 <code>slf4j-api</code>: slf4j 库，日志门面工厂方法<br>
 <code>log4j</code>: log4j 实现库</p>
-<h2 id="webxml">web.xml</h2>
+<h3 id="webxml">web.xml</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">    <span style="color:#75715e">&lt;!-- log4j --&gt;</span>
     <span style="color:#f92672">&lt;context-param&gt;</span>
         <span style="color:#f92672">&lt;param-name&gt;</span>log4jConfigLocation<span style="color:#f92672">&lt;/param-name&gt;</span>
         <span style="color:#f92672">&lt;param-value&gt;</span>/WEB-INF/log4j.properties<span style="color:#f92672">&lt;/param-value&gt;</span>
     <span style="color:#f92672">&lt;/context-param&gt;</span>
-</code></pre></div><h2 id="log4jproperties">log4j.properties</h2>
+</code></pre></div><h3 id="log4jproperties">log4j.properties</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">log4j<span style="color:#f92672">.</span><span style="color:#a6e22e">rootLogger</span> <span style="color:#f92672">=</span> info<span style="color:#f92672">,</span> fileout<span style="color:#f92672">,</span> stdout
 
 log4j<span style="color:#f92672">.</span><span style="color:#a6e22e">appender</span><span style="color:#f92672">.</span><span style="color:#a6e22e">fileout</span><span style="color:#f92672">=</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">apache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">log4j</span><span style="color:#f92672">.</span><span style="color:#a6e22e">FileAppender</span>
@@ -213,12 +213,12 @@ log4j<span style="color:#f92672">.</span><span style="color:#a6e22e">appender</s
 log4j<span style="color:#f92672">.</span><span style="color:#a6e22e">appender</span><span style="color:#f92672">.</span><span style="color:#a6e22e">stdout</span><span style="color:#f92672">=</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">apache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">log4j</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ConsoleAppender</span>
 log4j<span style="color:#f92672">.</span><span style="color:#a6e22e">appender</span><span style="color:#f92672">.</span><span style="color:#a6e22e">stdout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">=</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">apache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">log4j</span><span style="color:#f92672">.</span><span style="color:#a6e22e">PatternLayout</span>
 log4j<span style="color:#f92672">.</span><span style="color:#a6e22e">appender</span><span style="color:#f92672">.</span><span style="color:#a6e22e">stdout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ConversionPattern</span><span style="color:#f92672">=%</span>d<span style="color:#f92672">{</span>yyyy<span style="color:#f92672">-</span>MM<span style="color:#f92672">-</span>dd HH<span style="color:#f92672">:</span>mm<span style="color:#f92672">:</span>ss<span style="color:#f92672">,</span>SSS<span style="color:#f92672">}</span> app <span style="color:#f92672">[%</span>X<span style="color:#f92672">{</span>traceId<span style="color:#f92672">}]</span> <span style="color:#f92672">%-</span>5p <span style="color:#f92672">[%</span>t<span style="color:#f92672">]</span> <span style="color:#f92672">%</span>c<span style="color:#f92672">{</span>2<span style="color:#f92672">}:%</span>L <span style="color:#f92672">-</span> <span style="color:#f92672">%</span>m<span style="color:#f92672">%</span>n
-</code></pre></div><h2 id="使用">使用</h2>
+</code></pre></div><h3 id="使用">使用</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Logger logger <span style="color:#f92672">=</span> LoggerFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>A<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><h1 id="log4j2-配置">log4j2 配置</h1>
-<h2 id="maven-1">Maven</h2>
+</code></pre></div><h2 id="log4j2-配置">log4j2 配置</h2>
+<h3 id="maven-1">Maven</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
     <span style="color:#f92672">&lt;groupId&gt;</span>org.slf4j<span style="color:#f92672">&lt;/groupId&gt;</span>
     <span style="color:#f92672">&lt;artifactId&gt;</span>slf4j-api<span style="color:#f92672">&lt;/artifactId&gt;</span>
@@ -249,7 +249,7 @@ log4j<span style="color:#f92672">.</span><span style="color:#a6e22e">appender</s
 <code>log4j-core</code>: log4j2 核心库<br>
 <code>log4j-api</code>: log4j2 核心库<br>
 <code>log4j-slf4j-impl</code>: slf4j 到 log4j2 的绑定器，桥接包</p>
-<h2 id="log4j2xml">log4j2.xml</h2>
+<h3 id="log4j2xml">log4j2.xml</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style="color:#f92672">&lt;Configuration</span> <span style="color:#a6e22e">status=</span><span style="color:#e6db74">&#34;info&#34;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;Properties&gt;</span>
@@ -286,9 +286,9 @@ log4j<span style="color:#f92672">.</span><span style="color:#a6e22e">appender</s
         <span style="color:#f92672">&lt;/Root&gt;</span>
     <span style="color:#f92672">&lt;/Loggers&gt;</span>
 <span style="color:#f92672">&lt;/Configuration&gt;</span>
-</code></pre></div><h2 id="使用-1">使用</h2>
+</code></pre></div><h3 id="使用-1">使用</h3>
 <p>使用和之前 log4j 一样</p>
-<h1 id="总结">总结</h1>
+<h2 id="总结">总结</h2>
 <p>推荐使用 log4j2，支持异步日志，日志中还可以取到 <code>${hostName}</code></p>
 
     </div>
