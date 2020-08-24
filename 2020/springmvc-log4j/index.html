@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://wxianfeng.github.io/2020/hugo-github-page/" />
+  
+  <link rel="canonical" href="https://wxianfeng.github.io/2020/springmvc-log4j/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           SpringMVC log4j, log4j2 配置 | wxianfeng
+       
+  </title>
+  <meta name="title" content="SpringMVC log4j, log4j2 配置 | wxianfeng">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SpringMVC log4j, log4j2 配置"/>
+<meta name="twitter:description" content="发现网上关于 log4j, log4j2 的配置比较乱。特别是引用的包，参差不齐，本人最近从 log4j 升级到了 log4j2，特此记录，供参考。
+ log4j 配置 Maven &lt;slf4j.version&gt;1.7.7&lt;/slf4j.version&gt; &lt;log4j.version&gt;1.2.16&lt;/log4j.version&gt; &lt;dependency&gt; &lt;groupId&gt;org.slf4j&lt;/groupId&gt; &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt; &lt;version&gt;${slf4j.version}&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.slf4j&lt;/groupId&gt; &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt; &lt;version&gt;${slf4j.version}&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;log4j&lt;/groupId&gt; &lt;artifactId&gt;log4j&lt;/artifactId&gt; &lt;version&gt;${log4j.version}&lt;/version&gt; &lt;/dependency&gt; slf4j-log4j12: slf4j 到 log4j 的绑定器
+slf4j-api: slf4j 库，日志门面工厂方法
+log4j: log4j 实现库
+web.xml &lt;!-- log4j --&gt; &lt;context-param&gt; &lt;param-name&gt;log4jConfigLocation&lt;/param-name&gt; &lt;param-value&gt;/WEB-INF/log4j.properties&lt;/param-value&gt; &lt;/context-param&gt; log4j.properties log4j.rootLogger = info, fileout, stdout log4j.appender.fileout=org.apache.log4j.FileAppender log4j.appender.fileout.File=${user.home}/logs/app.log log4j.appender.fileout.layout=org.apache.log4j.PatternLayout log4j.appender.fileout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} app [%X{traceId}] %-5p [%t] %c{2}:%L - %m%n log4j.appender.stdout=org.apache.log4j.ConsoleAppender log4j.appender.stdout.layout=org.apache.log4j.PatternLayout log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} app [%X{traceId}] %-5p [%t] %c{2}:%L - %m%n 使用 public class A { private static final Logger logger = LoggerFactory."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "SpringMVC log4j, log4j2 配置",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/wxianfeng.github.io\/2020\/springmvc-log4j\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/wxianfeng.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  "keywords": "Java, SpringMVC, log4j, log4j2",
+  "wordcount":  222 ,
+  "url": "https:\/\/wxianfeng.github.io\/2020\/springmvc-log4j\/",
+  "datePublished": "2020-04-25T00:11:46\u002b08:00",
+  "dateModified": "2020-04-25T00:11:46\u002b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "wxianfeng",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/wxianfeng.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "wxianfeng"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://wxianfeng.github.io/">wxianfeng</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://wxianfeng.github.io/">wxianfeng</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">SpringMVC log4j, log4j2 配置</h1>
+        <div class="post-meta">
+            Written by <a href="https://wxianfeng.github.io/" rel="author">wxianfeng</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2020-04-25 >25 April 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://wxianfeng.github.io/categories/java/"> Java </a>
+                        
+                </span>
+                <i class="iconfont icon-timer"></i>
+                2 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <blockquote>
+<p>发现网上关于 log4j, log4j2 的配置比较乱。特别是引用的包，参差不齐，本人最近从 log4j 升级到了 log4j2，特此记录，供参考。</p>
+</blockquote>
+<h1 id="log4j-配置">log4j 配置</h1>
+<h2 id="maven">Maven</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;slf4j.version&gt;</span>1.7.7<span style="color:#f92672">&lt;/slf4j.version&gt;</span>
+<span style="color:#f92672">&lt;log4j.version&gt;</span>1.2.16<span style="color:#f92672">&lt;/log4j.version&gt;</span>
+
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.slf4j<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>slf4j-log4j12<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>${slf4j.version}<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.slf4j<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>slf4j-api<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>${slf4j.version}<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>log4j<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>log4j<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>${log4j.version}<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+</code></pre></div><p><code>slf4j-log4j12</code>: slf4j 到 log4j 的绑定器<br>
+<code>slf4j-api</code>: slf4j 库，日志门面工厂方法<br>
+<code>log4j</code>: log4j 实现库</p>
+<h2 id="webxml">web.xml</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">    <span style="color:#75715e">&lt;!-- log4j --&gt;</span>
+    <span style="color:#f92672">&lt;context-param&gt;</span>
+        <span style="color:#f92672">&lt;param-name&gt;</span>log4jConfigLocation<span style="color:#f92672">&lt;/param-name&gt;</span>
+        <span style="color:#f92672">&lt;param-value&gt;</span>/WEB-INF/log4j.properties<span style="color:#f92672">&lt;/param-value&gt;</span>
+    <span style="color:#f92672">&lt;/context-param&gt;</span>
+</code></pre></div><h2 id="log4jproperties">log4j.properties</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">log4j<span style="color:#f92672">.</span><span style="color:#a6e22e">rootLogger</span> <span style="color:#f92672">=</span> info<span style="color:#f92672">,</span> fileout<span style="color:#f92672">,</span> stdout
+
+log4j<span style="color:#f92672">.</span><span style="color:#a6e22e">appender</span><span style="color:#f92672">.</span><span style="color:#a6e22e">fileout</span><span style="color:#f92672">=</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">apache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">log4j</span><span style="color:#f92672">.</span><span style="color:#a6e22e">FileAppender</span>
+log4j<span style="color:#f92672">.</span><span style="color:#a6e22e">appender</span><span style="color:#f92672">.</span><span style="color:#a6e22e">fileout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">File</span><span style="color:#f92672">=</span>$<span style="color:#f92672">{</span>user<span style="color:#f92672">.</span><span style="color:#a6e22e">home</span><span style="color:#f92672">}/</span>logs<span style="color:#f92672">/</span>app<span style="color:#f92672">.</span><span style="color:#a6e22e">log</span>
+log4j<span style="color:#f92672">.</span><span style="color:#a6e22e">appender</span><span style="color:#f92672">.</span><span style="color:#a6e22e">fileout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">=</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">apache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">log4j</span><span style="color:#f92672">.</span><span style="color:#a6e22e">PatternLayout</span>
+log4j<span style="color:#f92672">.</span><span style="color:#a6e22e">appender</span><span style="color:#f92672">.</span><span style="color:#a6e22e">fileout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ConversionPattern</span><span style="color:#f92672">=%</span>d<span style="color:#f92672">{</span>yyyy<span style="color:#f92672">-</span>MM<span style="color:#f92672">-</span>dd HH<span style="color:#f92672">:</span>mm<span style="color:#f92672">:</span>ss<span style="color:#f92672">,</span>SSS<span style="color:#f92672">}</span> app <span style="color:#f92672">[%</span>X<span style="color:#f92672">{</span>traceId<span style="color:#f92672">}]</span> <span style="color:#f92672">%-</span>5p <span style="color:#f92672">[%</span>t<span style="color:#f92672">]</span> <span style="color:#f92672">%</span>c<span style="color:#f92672">{</span>2<span style="color:#f92672">}:%</span>L <span style="color:#f92672">-</span> <span style="color:#f92672">%</span>m<span style="color:#f92672">%</span>n
+
+log4j<span style="color:#f92672">.</span><span style="color:#a6e22e">appender</span><span style="color:#f92672">.</span><span style="color:#a6e22e">stdout</span><span style="color:#f92672">=</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">apache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">log4j</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ConsoleAppender</span>
+log4j<span style="color:#f92672">.</span><span style="color:#a6e22e">appender</span><span style="color:#f92672">.</span><span style="color:#a6e22e">stdout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">=</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">apache</span><span style="color:#f92672">.</span><span style="color:#a6e22e">log4j</span><span style="color:#f92672">.</span><span style="color:#a6e22e">PatternLayout</span>
+log4j<span style="color:#f92672">.</span><span style="color:#a6e22e">appender</span><span style="color:#f92672">.</span><span style="color:#a6e22e">stdout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ConversionPattern</span><span style="color:#f92672">=%</span>d<span style="color:#f92672">{</span>yyyy<span style="color:#f92672">-</span>MM<span style="color:#f92672">-</span>dd HH<span style="color:#f92672">:</span>mm<span style="color:#f92672">:</span>ss<span style="color:#f92672">,</span>SSS<span style="color:#f92672">}</span> app <span style="color:#f92672">[%</span>X<span style="color:#f92672">{</span>traceId<span style="color:#f92672">}]</span> <span style="color:#f92672">%-</span>5p <span style="color:#f92672">[%</span>t<span style="color:#f92672">]</span> <span style="color:#f92672">%</span>c<span style="color:#f92672">{</span>2<span style="color:#f92672">}:%</span>L <span style="color:#f92672">-</span> <span style="color:#f92672">%</span>m<span style="color:#f92672">%</span>n
+</code></pre></div><h2 id="使用">使用</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Logger logger <span style="color:#f92672">=</span> LoggerFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>A<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h1 id="log4j2-配置">log4j2 配置</h1>
+<h2 id="maven-1">Maven</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.slf4j<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>slf4j-api<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>1.7.7<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+  <span style="color:#f92672">&lt;groupId&gt;</span>com.lmax<span style="color:#f92672">&lt;/groupId&gt;</span>
+  <span style="color:#f92672">&lt;artifactId&gt;</span>disruptor<span style="color:#f92672">&lt;/artifactId&gt;</span>
+  <span style="color:#f92672">&lt;version&gt;</span>3.3.0<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.logging.log4j<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>log4j-core<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>2.8<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.logging.log4j<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>log4j-api<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>2.8<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.apache.logging.log4j<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>log4j-slf4j-impl<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>2.8<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+</code></pre></div><p><code>slf4j-api</code>: slf4j 库，日志门面工厂方法<br>
+<code>disruptor</code>: log4j2 异步日志依赖库<br>
+<code>log4j-core</code>: log4j2 核心库<br>
+<code>log4j-api</code>: log4j2 核心库<br>
+<code>log4j-slf4j-impl</code>: slf4j 到 log4j2 的绑定器，桥接包</p>
+<h2 id="log4j2xml">log4j2.xml</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;Configuration</span> <span style="color:#a6e22e">status=</span><span style="color:#e6db74">&#34;info&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;Properties&gt;</span>
+        <span style="color:#f92672">&lt;Property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;fileName&#34;</span><span style="color:#f92672">&gt;</span>${sys:user.home}/logs/app.log<span style="color:#f92672">&lt;/Property&gt;</span>
+    <span style="color:#f92672">&lt;/Properties&gt;</span>
+    <span style="color:#f92672">&lt;Appenders&gt;</span>
+        <span style="color:#f92672">&lt;Console</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Console&#34;</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;SYSTEM_OUT&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;PatternLayout</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;%d{yyyy-MM-dd HH:mm:ss,SSS} ${hostName} app [%X{traceId}] %-5p [%t] %c{2}:%L - %m%n&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;/Console&gt;</span>
+
+        <span style="color:#f92672">&lt;RollingRandomAccessFile</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;RollingRandomAccessFile&#34;</span> <span style="color:#a6e22e">fileName=</span><span style="color:#e6db74">&#34;${fileName}&#34;</span> <span style="color:#a6e22e">filePattern=</span><span style="color:#e6db74">&#34;${sys:user.home}/logs/app-%d{MM-dd-yyyy}-%i.log.gz&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;PatternLayout</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;%d{yyyy-MM-dd HH:mm:ss,SSS} ${hostName} app [%X{traceId}] %-5p [%t] %c{2}:%L - %m%n&#34;</span><span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;Policies&gt;</span>
+                <span style="color:#f92672">&lt;SizeBasedTriggeringPolicy</span> <span style="color:#a6e22e">size=</span><span style="color:#e6db74">&#34;500 MB&#34;</span> <span style="color:#f92672">/&gt;</span>
+                <span style="color:#f92672">&lt;TimeBasedTriggeringPolicy</span> <span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;/Policies&gt;</span>
+        <span style="color:#f92672">&lt;/RollingRandomAccessFile&gt;</span>
+
+        <span style="color:#f92672">&lt;Async</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Async&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;AppenderRef</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;Console&#34;</span><span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;AppenderRef</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;RollingRandomAccessFile&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;/Async&gt;</span>
+    <span style="color:#f92672">&lt;/Appenders&gt;</span>
+    <span style="color:#f92672">&lt;Loggers&gt;</span>
+        <span style="color:#f92672">&lt;Logger</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;RollingRandomAccessFileLogger&#34;</span> <span style="color:#a6e22e">level=</span><span style="color:#e6db74">&#34;info&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;AppenderRef</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;RollingRandomAccessFile&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;/Logger&gt;</span>
+        <span style="color:#f92672">&lt;Logger</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;AsyncLogger&#34;</span> <span style="color:#a6e22e">level=</span><span style="color:#e6db74">&#34;info&#34;</span> <span style="color:#a6e22e">additivity=</span><span style="color:#e6db74">&#34;false&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;AppenderRef</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;Async&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;/Logger&gt;</span>
+        <span style="color:#f92672">&lt;Root</span> <span style="color:#a6e22e">level=</span><span style="color:#e6db74">&#34;info&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;AppenderRef</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;Console&#34;</span><span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;AppenderRef</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;RollingRandomAccessFile&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;/Root&gt;</span>
+    <span style="color:#f92672">&lt;/Loggers&gt;</span>
+<span style="color:#f92672">&lt;/Configuration&gt;</span>
+</code></pre></div><h2 id="使用-1">使用</h2>
+<p>使用和之前 log4j 一样</p>
+<h1 id="总结">总结</h1>
+<p>推荐使用 log4j2，支持异步日志，日志中还可以取到 <code>${hostName}</code></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>wxianfeng </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>222</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2fwxianfeng.github.io%2f2020%2fspringmvc-log4j%2f&amp;text=SpringMVC%20log4j%2c%20log4j2%20%e9%85%8d%e7%bd%ae&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwxianfeng.github.io%2f2020%2fspringmvc-log4j%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwxianfeng.github.io%2f2020%2fspringmvc-log4j%2f&amp;title=SpringMVC%20log4j%2c%20log4j2%20%e9%85%8d%e7%bd%ae" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-icon-tag"></i>Tag: 
+            
+            <span class="tag"><a href="https://wxianfeng.github.io/tags/java/">
+                    #Java</a></span>
+            
+            <span class="tag"><a href="https://wxianfeng.github.io/tags/springmvc/">
+                    #SpringMVC</a></span>
+            
+            <span class="tag"><a href="https://wxianfeng.github.io/tags/log4j/">
+                    #log4j</a></span>
+            
+            <span class="tag"><a href="https://wxianfeng.github.io/tags/log4j2/">
+                    #log4j2</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://wxianfeng.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://wxianfeng.github.io/2020/hugo-github-page/" class="prev" rel="prev" title="使用 Hugo &#43; Github Pages 搭建静态网站"><i class="iconfont icon-dajiantou"></i>&nbsp;使用 Hugo &#43; Github Pages 搭建静态网站</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="wxianfeng/wxianfeng.com-comments"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://wxianfeng.github.io/">wxianfeng</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

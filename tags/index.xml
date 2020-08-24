@@ -6,10 +6,46 @@
     <description>Recent content in Tags on wxianfeng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 04 Mar 2020 00:44:35 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2020 00:11:46 +0800</lastBuildDate>
     
 	<atom:link href="https://wxianfeng.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java</title>
+      <link>https://wxianfeng.github.io/tags/java/</link>
+      <pubDate>Sat, 25 Apr 2020 00:11:46 +0800</pubDate>
+      
+      <guid>https://wxianfeng.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>log4j</title>
+      <link>https://wxianfeng.github.io/tags/log4j/</link>
+      <pubDate>Sat, 25 Apr 2020 00:11:46 +0800</pubDate>
+      
+      <guid>https://wxianfeng.github.io/tags/log4j/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>log4j2</title>
+      <link>https://wxianfeng.github.io/tags/log4j2/</link>
+      <pubDate>Sat, 25 Apr 2020 00:11:46 +0800</pubDate>
+      
+      <guid>https://wxianfeng.github.io/tags/log4j2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SpringMVC</title>
+      <link>https://wxianfeng.github.io/tags/springmvc/</link>
+      <pubDate>Sat, 25 Apr 2020 00:11:46 +0800</pubDate>
+      
+      <guid>https://wxianfeng.github.io/tags/springmvc/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Github Pages</title>
