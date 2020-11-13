@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://wxianfeng.github.io/2020/springmvc-log4j/" />
+  
+  <link rel="canonical" href="https://wxianfeng.github.io/2020/lpr/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           按揭贷款要不要改 LPR 浮动利率 | wxianfeng
+       
+  </title>
+  <meta name="title" content="按揭贷款要不要改 LPR 浮动利率 | wxianfeng">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="按揭贷款要不要改 LPR 浮动利率"/>
+<meta name="twitter:description" content="背景 在 2020 年 8 月底前，所有按揭贷款会默认转化为 LPR 浮动利率，这里很多人会有困惑，之前的贷款利率要不要转 LPR ?
+另外注意，银行提供三种方案供用户选择，如下:
+ 基于人行基准利率浮动 原先的固定利率不变，例如原先的按揭利率是 4.41 基于 LPR  本文主要分析下第 3 种情况，LPR 情况， 供参考
+LPR 算法 要不要改 LPR，首先我们得知道 LPR 的计算算法，LPR 计算算法如下:
+$$ LPR = LPR\left ( base \right ) &#43; Point $$ $$ Point = P(old) - P(base) $$
+LPR: 要计算的 LPR 利率
+LPR(base): LPR 基准利率，每月变化 Point: 计算出的 LPR 利率加点，人行的基准利率很少变化，可以认为算出的加点值就是固定的
+P(old): 你的按揭贷款原先执行利率
+P(base): 最新的人行基准利率，例如 2019.12.31 号是 4.8
+举例  原先利率
+例如 2016 年做了按揭，贷款月份是 4 月份，当时贷款利率是人行基准利率(当时 4."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "按揭贷款要不要改 LPR 浮动利率",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/wxianfeng.github.io\/2020\/lpr\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/wxianfeng.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  "keywords": "LPR, 理财, 投资",
+  "wordcount":  145 ,
+  "url": "https:\/\/wxianfeng.github.io\/2020\/lpr\/",
+  "datePublished": "2020-08-13T22:31:15\u002b08:00",
+  "dateModified": "2020-08-13T22:31:15\u002b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "wxianfeng",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/wxianfeng.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "wxianfeng"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://wxianfeng.github.io/">wxianfeng</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://wxianfeng.github.io/">wxianfeng</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">按揭贷款要不要改 LPR 浮动利率</h1>
+        <div class="post-meta">
+            Written by <a href="https://wxianfeng.github.io/" rel="author">wxianfeng</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2020-08-13 >13 August 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://wxianfeng.github.io/categories/%E7%90%86%E8%B4%A2/"> 理财 </a>
+                        
+                </span>
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="背景">背景</h2>
+<p>在 2020 年 8 月底前，所有按揭贷款会默认转化为 LPR 浮动利率，这里很多人会有困惑，之前的贷款利率要不要转 LPR ?</p>
+<p>另外注意，银行提供三种方案供用户选择，如下:</p>
+<ol>
+<li>基于人行基准利率浮动</li>
+<li>原先的固定利率不变，例如原先的按揭利率是 4.41</li>
+<li>基于 LPR</li>
+</ol>
+<p>本文主要分析下第 3 种情况，LPR 情况， 供参考</p>
+<h2 id="lpr-算法">LPR 算法</h2>
+<p>要不要改 LPR，首先我们得知道 LPR 的计算算法，LPR 计算算法如下:</p>
+<p>$$ LPR = LPR\left ( base \right ) + Point $$
+$$ Point = P(old) - P(base) $$</p>
+<p><code>LPR</code>: 要计算的 LPR 利率<br>
+<code>LPR(base)</code>:  LPR 基准利率，每月变化
+<code>Point</code>:  计算出的 LPR 利率加点，人行的基准利率很少变化，可以认为算出的加点值就是固定的<br>
+<code>P(old)</code>:  你的按揭贷款原先执行利率<br>
+<code>P(base)</code>:  最新的人行基准利率，例如 2019.12.31 号是 4.8</p>
+<h3 id="举例">举例</h3>
+<ul>
+<li>原先利率<br>
+例如 2016 年做了按揭，贷款月份是 4 月份，当时贷款利率是人行基准利率(当时 4.9)的 9 折，那么原先利率就是</li>
+</ul>
+<p>$$ P(old) = 4.9 * 0.9 = 4.41 $$</p>
+<ul>
+<li>LPR 利率<br>
+$$ Point = 4.41 - 4.8 = - 0.39 $$
+$$ LPR = 4.75 + (-0.39) = 4.36 $$</li>
+</ul>
+<p>4.8 是 2019 年 12 月人行基准利率<br>
+4.75 是 2020 年 3 月 LPR 人行基准利率，你的 LPR 浮动利率就是你的贷款月上一个月的 LPR 基准 利率 + 你的加点数</p>
+<p>可以看到改用 LPR 利率后，利率是 4.36，比原先的 4.41 利率少了</p>
+<h2 id="调整周期">调整周期</h2>
+<p>你的按揭贷款 LPR 浮动利率一年调整一次，你的贷款月份调整</p>
+<h2 id="建议">建议</h2>
+<p>利率不是很低的话，例如不低于 4，个人认为都转 LPR 比较好，每年可以调一次</p>
+<p>LPR 利率总体趋势是下降的，你可能说未来会上升，就算上升，应该也是能承受的</p>
+<h2 id="相关">相关</h2>
+<p><a href="http://www.chinamoney.com.cn/chinese/lllpr/">LPR 基准利率数据</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>wxianfeng </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>145</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2fwxianfeng.github.io%2f2020%2flpr%2f&amp;text=%e6%8c%89%e6%8f%ad%e8%b4%b7%e6%ac%be%e8%a6%81%e4%b8%8d%e8%a6%81%e6%94%b9%20LPR%20%e6%b5%ae%e5%8a%a8%e5%88%a9%e7%8e%87&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwxianfeng.github.io%2f2020%2flpr%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwxianfeng.github.io%2f2020%2flpr%2f&amp;title=%e6%8c%89%e6%8f%ad%e8%b4%b7%e6%ac%be%e8%a6%81%e4%b8%8d%e8%a6%81%e6%94%b9%20LPR%20%e6%b5%ae%e5%8a%a8%e5%88%a9%e7%8e%87" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-icon-tag"></i>Tag: 
+            
+            <span class="tag"><a href="https://wxianfeng.github.io/tags/lpr/">
+                    #LPR</a></span>
+            
+            <span class="tag"><a href="https://wxianfeng.github.io/tags/%E7%90%86%E8%B4%A2/">
+                    #理财</a></span>
+            
+            <span class="tag"><a href="https://wxianfeng.github.io/tags/%E6%8A%95%E8%B5%84/">
+                    #投资</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://wxianfeng.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://wxianfeng.github.io/2020/springmvc-log4j/" class="prev" rel="prev" title="SpringMVC log4j, log4j2 配置"><i class="iconfont icon-dajiantou"></i>&nbsp;SpringMVC log4j, log4j2 配置</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+    <script src="https://utteranc.es/client.js"
+            repo="wxianfeng/wxianfeng.com-comments"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2020</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://wxianfeng.github.io/">wxianfeng</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+     </div>
+  </body>
+</html>

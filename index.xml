@@ -5,8 +5,17 @@
     <description>Recent content in wxianfeng on wxianfeng</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 25 Apr 2020 00:11:46 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2020 22:31:15 +0800</lastBuildDate>
     <atom:link href="https://wxianfeng.github.io/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Posts</title>
+      <link>https://wxianfeng.github.io/posts/</link>
+      <pubDate>Thu, 13 Aug 2020 22:31:15 +0800</pubDate>
+      
+      <guid>https://wxianfeng.github.io/posts/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>About</title>
@@ -29,7 +38,7 @@
 &lt;li&gt;豆爸&lt;/li&gt;
 &lt;li&gt;曾经使用 Ruby On Rails 北漂 4 年，怀念帝都的庆丰包子、呷哺、大盘鸡、陕西面食、驴肉火烧、肉饼 == 好吃的&lt;/li&gt;
 &lt;li&gt;现居美丽的杭州，阿里程序员，花名昊淼&lt;/li&gt;
-&lt;li&gt;目前第一语言主要使用 Java 技术栈，平时对大前端、机器学习、大数据等也有所涉及，不给自己设限&lt;/li&gt;
+&lt;li&gt;目前第一语言主要使用 Java 技术栈，平时对大前端、机器学习、大数据等也有所涉及，不设限&lt;/li&gt;
 &lt;li&gt;喜欢运动，羽毛球(🏸)、马拉松(🏃)、篮球(🏀) 常有参与；偶尔出去玩还会玩下摄影(Nikon D750套机)；最近还想考个机车驾照&lt;/li&gt;
 &lt;li&gt;Blog 写了很多年了，平时工作比较忙，偶尔周末兴致大发写一篇，Blog 是我学习新技术的切入点，来解决自己的需求，会一直写下去，希望能写到 50 岁&lt;/li&gt;
 &lt;li&gt;欢迎交流&lt;/li&gt;
@@ -43,15 +52,6 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Posts</title>
-      <link>https://wxianfeng.github.io/posts/</link>
-      <pubDate>Sat, 25 Apr 2020 00:11:46 +0800</pubDate>
-      
-      <guid>https://wxianfeng.github.io/posts/</guid>
-      <description></description>
     </item>
     
   </channel>
